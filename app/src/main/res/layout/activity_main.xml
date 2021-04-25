@@ -7,12 +7,23 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtPermission1"
+        android:id="@+id/txt_last_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_back"
         android:textColor="@color/white"
-        android:text="Manage the permission request code yourself"
+        android:text="Get Last Location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/txt_location_updates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_back"
+        android:textColor="@color/white"
+        android:text="Get Location Updates"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

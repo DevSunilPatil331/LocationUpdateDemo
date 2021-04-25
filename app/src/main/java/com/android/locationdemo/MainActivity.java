@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CHECK_SETTINGS = 1244;
     private String TAG="MAinActivity";
     private static final int RQUEST_PERMISSION_CODE = 5421;
-    TextView txtPermission1;
+    TextView txt_location_updates,txt_last_location;
     String[] permissions=new String[]{  Manifest.permission.ACCESS_FINE_LOCATION,
                                         Manifest.permission.ACCESS_COARSE_LOCATION};
     private  FusedLocationProviderClient fusedLocationProviderClient;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickEvents() {
-        txtPermission1.setOnClickListener(new View.OnClickListener() {
+        txt_location_updates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkForPermissions()){
@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                     boolean is_location_present=states.isLocationPresent();
                     boolean is_network_location_present=states.isNetworkLocationPresent();
                     boolean is_gps_present=states.isGpsPresent();
+                    Log.e(TAG, "onSuccess: location_present="+is_location_present+"\nis_network_location_present="+is_network_location_present+
+                            "\nis_gps_present="+is_gps_present);
                     getLocationUpdates();
                 }
 
@@ -183,7 +185,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        txtPermission1=findViewById(R.id.txtPermission1);
+        txt_location_updates=findViewById(R.id.txt_location_updates);
+        txt_last_location=findViewById(R.id.txt_last_location);
     }
 
     @Override
